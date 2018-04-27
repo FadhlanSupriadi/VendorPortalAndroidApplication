@@ -39,7 +39,7 @@ public class TampilanAwalActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent( TampilanAwalActivity.this,MainActivity.class);
+                Intent intent = new Intent( TampilanAwalActivity.this,TampilanAwalActivity.class);
                 startActivity(intent);
             }
         });
