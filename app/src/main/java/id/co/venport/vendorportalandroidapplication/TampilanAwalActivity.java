@@ -13,9 +13,6 @@ public class TampilanAwalActivity extends AppCompatActivity {
     private Button daftarButton, masukButton, fbButton, googleButton;
     private FirebaseAuth auth;
 
-    @Override
-    public void onBackPressed() {
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +31,15 @@ public class TampilanAwalActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent( TampilanAwalActivity.this,LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        daftarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent( TampilanAwalActivity.this,RegisterActivity.class);
                 startActivity(intent);
             }
         });
