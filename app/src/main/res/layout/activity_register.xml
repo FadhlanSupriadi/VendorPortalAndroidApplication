@@ -94,7 +94,7 @@
 
     <EditText
         android:id="@+id/editNama"
-        android:layout_width="300"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
         android:layout_marginEnd="42dp"
@@ -111,7 +111,7 @@
 
     <EditText
         android:id="@+id/editEmail"
-        android:layout_width="300"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
         android:layout_marginEnd="42dp"
@@ -127,7 +127,7 @@
 
     <EditText
         android:id="@+id/editHp"
-        android:layout_width="300"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
         android:layout_marginEnd="42dp"
@@ -143,7 +143,7 @@
 
     <EditText
         android:id="@+id/editPassword"
-        android:layout_width="300"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
         android:layout_marginEnd="42dp"
@@ -159,7 +159,7 @@
 
     <EditText
         android:id="@+id/editUlangPassword"
-        android:layout_width="300"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
         android:layout_marginEnd="42dp"
@@ -175,8 +175,8 @@
 
     <Button
         android:id="@+id/daftarButton"
-        android:layout_width="297"
-        android:layout_height="39"
+        android:layout_width="297dp"
+        android:layout_height="39dp"
         android:layout_marginBottom="24dp"
         android:layout_marginEnd="43dp"
         android:layout_marginLeft="44dp"

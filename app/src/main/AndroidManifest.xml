@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".LupaPassword" />
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".HomePageActivity"></activity>
     </application>
 
 </manifest>
