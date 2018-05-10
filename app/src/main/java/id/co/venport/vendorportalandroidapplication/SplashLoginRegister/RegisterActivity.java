@@ -1,4 +1,4 @@
-package id.co.venport.vendorportalandroidapplication;
+package id.co.venport.vendorportalandroidapplication.SplashLoginRegister;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +13,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import id.co.venport.vendorportalandroidapplication.R;
 
 public class RegisterActivity extends AppCompatActivity {
 
