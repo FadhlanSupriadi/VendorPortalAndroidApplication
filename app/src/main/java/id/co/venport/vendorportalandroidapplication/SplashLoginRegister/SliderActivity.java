@@ -39,7 +39,7 @@ public class SliderActivity extends AppCompatActivity {
         introManager = new SliderIntromanagerActivity(this);
         if(!introManager.Check()){
             introManager.setFirst(false);
-            Intent intent = new Intent(SliderActivity.this, LoginActivity.class);
+            Intent intent = new Intent(SliderActivity.this,TampilanAwalActivity.class);
             preferenceIntro.createIntro();
             startActivity(intent);
             finish();
@@ -65,7 +65,7 @@ public class SliderActivity extends AppCompatActivity {
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SliderActivity.this, LoginActivity.class);
+                Intent intent = new Intent(SliderActivity.this, TampilanAwalActivity.class);
                 preferenceIntro.createIntro();
                 startActivity(intent);
                 finish();
@@ -80,7 +80,7 @@ public class SliderActivity extends AppCompatActivity {
                 if (current<layouts.length){
                     viewPager.setCurrentItem(current);
                 }else{
-                    Intent intent = new Intent(SliderActivity.this, LoginActivity.class);
+                    Intent intent = new Intent(SliderActivity.this, TampilanAwalActivity.class);
                     preferenceIntro.createIntro();
                     startActivity(intent);
                     finish();

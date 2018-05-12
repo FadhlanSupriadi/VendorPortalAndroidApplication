@@ -32,12 +32,12 @@
             android:layout_height="wrap_content"
             android:text="Pengen beli catering makanan tanpa ribet?"
             android:layout_gravity="center"
-            android:textColor="@color/colorFont"/>
+            android:textColor="@color/greyFont"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ayo pesang catering disini sekarang juga"
-            android:textColor="@color/colorFont"
+            android:textColor="@color/greyFont"
             android:layout_gravity="center"/>
     </LinearLayout>
 </RelativeLayout>

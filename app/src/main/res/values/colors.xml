@@ -2,11 +2,15 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#5D992B</color>
-    <color name="colorAccent">#29aa29</color>
+    <color name="colorAccent">#669F41</color>
 
     <color name="colorFont">#363637</color>
     <color name="colorDefault">#9EB3DD</color>
     <color name="white">#ffffff</color>
+    <color name="orangeButton">#F2C94C</color>
+    <color name="greyFont">#bfbfbf</color>
+    <color name="greyDarkFont">#8e8e8e</color>
+    <color name="light_grey">#ECEFF1</color>
 
     <!-- For Dot -->
     <color name="dot_dark_screen1">#707EA1</color>
