@@ -24,7 +24,11 @@
         <activity android:name=".SplashLoginRegister.lupapasswordActivity" />
         <activity android:name=".SplashLoginRegister.RegisterActivity" />
         <activity android:name=".HomePageActivity" />
-        <activity android:name=".SplashLoginRegister.SliderActivity"></activity>
+        <activity android:name=".SplashLoginRegister.SliderActivity" />
+        <activity
+            android:name=".mainmenu.MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
