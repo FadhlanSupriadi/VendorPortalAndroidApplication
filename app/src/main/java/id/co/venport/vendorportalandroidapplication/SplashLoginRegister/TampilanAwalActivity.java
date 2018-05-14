@@ -18,11 +18,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import id.co.venport.vendorportalandroidapplication.AppConfig.PreferenceIntro;
-import id.co.venport.vendorportalandroidapplication.AppConfig.PreferenceLogin;
 import id.co.venport.vendorportalandroidapplication.HomePageActivity;
 import id.co.venport.vendorportalandroidapplication.R;
-import id.co.venport.vendorportalandroidapplication.mainmenu.MainActivity;
 
 public class TampilanAwalActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -30,7 +27,6 @@ public class TampilanAwalActivity extends AppCompatActivity implements View.OnCl
     private FirebaseAuth firebaseAuth;
     private EditText user, passwd;
     private ProgressDialog progressDialog;
-    private PreferenceLogin preferenceLogin;
 
 
     @Override
@@ -39,7 +35,6 @@ public class TampilanAwalActivity extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.activity_tampilan_awal);
 
         firebaseAuth=FirebaseAuth.getInstance();
-        preferenceLogin = new PreferenceLogin(this);
 
         progressDialog = new ProgressDialog(this);
 
@@ -59,9 +54,8 @@ public class TampilanAwalActivity extends AppCompatActivity implements View.OnCl
                 View mView = getLayoutInflater().inflate(R.layout.activity_dialog_login, null);
 
                 if(firebaseAuth.getCurrentUser()!=null){
-                    preferenceLogin.createIntro(firebaseAuth.getCurrentUser().getEmail());
                     finish();
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
                 }
 
                 user = (EditText) mView.findViewById(R.id.username);
@@ -104,7 +98,7 @@ public class TampilanAwalActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void userLogin(){
-        final String email = user.getText().toString().trim();
+        String email = user.getText().toString().trim();
         String password = passwd.getText().toString().trim();
 
         if(TextUtils.isEmpty(email)){
@@ -128,9 +122,8 @@ public class TampilanAwalActivity extends AppCompatActivity implements View.OnCl
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressDialog.dismiss();
                 if(task.isSuccessful()){
-                    preferenceLogin.createIntro(email);
                     finish();
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
                 }else{
                     Toast.makeText(TampilanAwalActivity.this,"Maybe user or password is wrong",Toast.LENGTH_LONG).show();
                 }

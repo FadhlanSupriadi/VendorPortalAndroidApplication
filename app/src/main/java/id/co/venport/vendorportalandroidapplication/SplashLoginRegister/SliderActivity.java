@@ -40,7 +40,6 @@ public class SliderActivity extends AppCompatActivity {
         if(!introManager.Check()){
             introManager.setFirst(false);
             Intent intent = new Intent(SliderActivity.this,TampilanAwalActivity.class);
-
             preferenceIntro.createIntro();
             startActivity(intent);
             finish();
