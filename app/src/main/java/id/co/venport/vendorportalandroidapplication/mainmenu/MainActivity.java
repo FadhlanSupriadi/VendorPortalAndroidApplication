@@ -1,5 +1,8 @@
 package id.co.venport.vendorportalandroidapplication.mainmenu;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -21,6 +24,7 @@ import id.co.venport.vendorportalandroidapplication.AppConfig.PreferenceIntro;
 import id.co.venport.vendorportalandroidapplication.AppConfig.PreferenceLogin;
 import id.co.venport.vendorportalandroidapplication.R;
 import id.co.venport.vendorportalandroidapplication.SplashLoginRegister.TampilanAwalActivity;
+import id.co.venport.vendorportalandroidapplication.fragmentMenu.EventFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -42,7 +46,6 @@ public class MainActivity extends AppCompatActivity
 
         txtEmail = (TextView) findViewById(R.id.txtEmail);
         txtNama = (TextView) findViewById(R.id.txtNama);
-
         txtEmail.setText(user.get("EMAIL"));
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -95,10 +98,12 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        Fragment fragment = null;
         int id = item.getItemId();
 
         if (id == R.id.nav_event) {
-            // Handle the camera action
+            fragment = new EventFragment();
+            break;
         } else if (id == R.id.nav_konsumsi) {
 
         } else if (id == R.id.nav_logistik) {
@@ -114,6 +119,10 @@ public class MainActivity extends AppCompatActivity
         }else if (id == R.id.nav_about) {
 
         }
+
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_content,fragment);
+        fragmentTransaction.commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
