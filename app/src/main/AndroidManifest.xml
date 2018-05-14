@@ -25,10 +25,10 @@
         <activity android:name=".SplashLoginRegister.RegisterActivity" />
         <activity android:name=".HomePageActivity" />
         <activity android:name=".SplashLoginRegister.SliderActivity" />
-        <activity android:name=".kebijakanprivasi" />
-        <activity android:name=".KebijakanPrivasiActivity" />
-        <activity android:name=".BantuanActivity" />
-        <activity android:name=".TentangKamiActivity"></activity>
+        <activity
+            android:name=".mainmenu.MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
