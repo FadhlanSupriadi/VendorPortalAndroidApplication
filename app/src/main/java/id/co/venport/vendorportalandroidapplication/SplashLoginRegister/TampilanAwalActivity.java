@@ -7,6 +7,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,11 +19,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import id.co.venport.vendorportalandroidapplication.AppConfig.PreferenceIntro;
 import id.co.venport.vendorportalandroidapplication.AppConfig.PreferenceLogin;
-import id.co.venport.vendorportalandroidapplication.HomePageActivity;
 import id.co.venport.vendorportalandroidapplication.R;
-import id.co.venport.vendorportalandroidapplication.mainmenu.MainActivity;
+import id.co.venport.vendorportalandroidapplication.mainmenu.MenuActivity;
 
 public class TampilanAwalActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -61,7 +60,7 @@ public class TampilanAwalActivity extends AppCompatActivity implements View.OnCl
                 if(firebaseAuth.getCurrentUser()!=null){
                     preferenceLogin.createIntro(firebaseAuth.getCurrentUser().getEmail());
                     finish();
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(), MenuActivity.class));
                 }
 
                 user = (EditText) mView.findViewById(R.id.username);
@@ -123,19 +122,26 @@ public class TampilanAwalActivity extends AppCompatActivity implements View.OnCl
         progressDialog.setMessage("Checking Account...");
         progressDialog.show();
 
-        firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                progressDialog.dismiss();
-                if(task.isSuccessful()){
-                    preferenceLogin.createIntro(email);
+//        firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+//            @Override
+//            public void onComplete(@NonNull Task<AuthResult> task) {
+//                progressDialog.dismiss();
+//                if(task.isSuccessful()){
+//                    preferenceLogin.createIntro(email);
+//                    finish();
+//                    startActivity(new Intent(getApplicationContext(), MenuActivity.class));
+//                }else{
+//                    Toast.makeText(TampilanAwalActivity.this,"Maybe user or password is wrong",Toast.LENGTH_LONG).show();
+//                }
+//            }
+//        });
+
+        progressDialog.dismiss();
+        if(email.equals("admin@gmail.com") && password.equals("admin")){
+            preferenceLogin.createIntro(email);
                     finish();
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                }else{
-                    Toast.makeText(TampilanAwalActivity.this,"Maybe user or password is wrong",Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+                    startActivity(new Intent(getApplicationContext(), MenuActivity.class));
+        }
     }
 
     @Override

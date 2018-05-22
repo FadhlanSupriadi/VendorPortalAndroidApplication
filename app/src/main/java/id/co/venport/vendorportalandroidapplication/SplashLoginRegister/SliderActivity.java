@@ -20,6 +20,7 @@ import android.widget.TextView;
 
 import id.co.venport.vendorportalandroidapplication.R;
 import id.co.venport.vendorportalandroidapplication.AppConfig.PreferenceIntro;
+import id.co.venport.vendorportalandroidapplication.mainmenu.MenuActivity;
 
 public class SliderActivity extends AppCompatActivity {
     private ViewPagerAdapter viewPagerAdapter;
@@ -66,7 +67,7 @@ public class SliderActivity extends AppCompatActivity {
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SliderActivity.this, TampilanAwalActivity.class);
+                Intent intent = new Intent(SliderActivity.this, MenuActivity.class);
                 preferenceIntro.createIntro();
                 startActivity(intent);
                 finish();
@@ -81,7 +82,7 @@ public class SliderActivity extends AppCompatActivity {
                 if (current<layouts.length){
                     viewPager.setCurrentItem(current);
                 }else{
-                    Intent intent = new Intent(SliderActivity.this, TampilanAwalActivity.class);
+                    Intent intent = new Intent(SliderActivity.this, MenuActivity.class);
                     preferenceIntro.createIntro();
                     startActivity(intent);
                     finish();
@@ -125,6 +126,7 @@ public class SliderActivity extends AppCompatActivity {
             if(position==layouts.length-1){
                 next.setText("DONE");
                 skip.setVisibility(View.GONE);
+
             }else{
                 next.setText("NEXT");
                 skip.setVisibility(View.VISIBLE);

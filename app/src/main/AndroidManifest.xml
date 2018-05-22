@@ -26,8 +26,7 @@
         <activity android:name=".HomePageActivity" />
         <activity android:name=".SplashLoginRegister.SliderActivity" />
         <activity
-            android:name=".mainmenu.MainActivity"
-            android:label="@string/title_activity_main"
+            android:name=".mainmenu.MenuActivity"
             android:theme="@style/AppTheme"></activity>
     </application>
 

@@ -5,8 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
-
 import id.co.venport.vendorportalandroidapplication.R;
 import id.co.venport.vendorportalandroidapplication.model.Event;
 
@@ -20,7 +20,7 @@ public class EventRecyclerViewAdapter extends RecyclerView.Adapter<EventRecycler
 
     public EventRecyclerViewAdapter(List<Event> items, Context context) {
         mValues = items;
-        context = context;
+        this.context = context;
     }
 
     @Override
@@ -35,12 +35,6 @@ public class EventRecyclerViewAdapter extends RecyclerView.Adapter<EventRecycler
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).getJudul());
         holder.mContentView.setText(mValues.get(position).getDeskripsi());
-
-        holder.mView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
     }
 
     @Override
@@ -49,16 +43,17 @@ public class EventRecyclerViewAdapter extends RecyclerView.Adapter<EventRecycler
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final View mView;
         public final TextView mIdView;
         public final TextView mContentView;
+        public ImageView imageView;
+
         public Event mItem;
 
         public ViewHolder(View view) {
             super(view);
-            mView = view;
-            mIdView = (TextView) view.findViewById(R.id.id);
-            mContentView = (TextView) view.findViewById(R.id.content);
+            mIdView = (TextView) view.findViewById(R.id.txtJudul);
+            mContentView = (TextView) view.findViewById(R.id.txtDeskripsi);
+            imageView = (ImageView) view.findViewById(R.id.image);
         }
 
         @Override

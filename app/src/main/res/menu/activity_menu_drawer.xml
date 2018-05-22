@@ -6,30 +6,32 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_event"
-            android:title="Event" />
+            android:title="Events"
+            />
         <item
             android:id="@+id/nav_konsumsi"
-            android:title="Konsumsi" />
+            android:title="Konsumsi"
+             />
+        <item
+            android:id="@+id/nav_lacak"
+            android:title="Lacak" />
         <item
             android:id="@+id/nav_logistik"
             android:title="Logistik" />
         <item
             android:id="@+id/nav_attribut"
             android:title="Attribut" />
-        <item
-            android:id="@+id/nav_lacak"
-            android:title="Lacak Pesanan" />
     </group>
 
+    <item android:title="" >
         <menu>
-            <item
-                android:id="@+id/nav_kebijakan"
-                android:title="Kebijakan Provasi" />
             <item
                 android:id="@+id/nav_bantuan"
                 android:title="Bantuan" />
             <item
-                android:id="@+id/nav_about"
-                android:title="Tentang Kami" />
+                android:id="@+id/nav_kebijakan"
+                android:title="Kebijakan" />
         </menu>
+    </item>
+
 </menu>

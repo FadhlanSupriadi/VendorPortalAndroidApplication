@@ -11,8 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import id.co.venport.vendorportalandroidapplication.R;
-import id.co.venport.vendorportalandroidapplication.fragmentMenu.dummy.DummyContent;
-import id.co.venport.vendorportalandroidapplication.fragmentMenu.dummy.DummyContent.DummyItem;
 import id.co.venport.vendorportalandroidapplication.model.Event;
 
 import java.util.ArrayList;
@@ -22,17 +20,20 @@ public class EventFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private ArrayList<Event> eventArrayList;
-    private EventRecyclerViewAdapter viewAdapter;
 
     public EventFragment() {
-    }
 
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_item_list, container, false);
         eventArrayList = new ArrayList();
+
+        eventArrayList.add(new Event("Paramabudaya","Acara budaya ada jawa yang di selenggarakan UKM Daerah Jawa","Gedung Serba Guna Telkom University","7PM","Ketua Panitia Paramabudaya",0));
+        eventArrayList.add(new Event("Paramabudaya","Acara budaya ada jawa yang di selenggarakan UKM Daerah Jawa","Gedung Serba Guna Telkom University","7PM","Ketua Panitia Paramabudaya",1));
+        eventArrayList.add(new Event("Paramabudaya","Acara budaya ada jawa yang di selenggarakan UKM Daerah Jawa","Gedung Serba Guna Telkom University","7PM","Ketua Panitia Paramabudaya",2));
 
         recyclerView = (RecyclerView) view.findViewById(R.id.list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));

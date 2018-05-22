@@ -32,8 +32,8 @@ public class PreferenceLogin {
     private static final String PREF_NAME = "PreferenceIntro";
 
     // All Shared Preferences Keys
-    private static final String IS_PROCEED = "IsProceed";
-    private static final String KEY_EMAIL = "Email";
+    public static final String IS_PROCEED = "IsProceed";
+    public static final String KEY_EMAIL = "Email";
 
     public PreferenceLogin(Context context){
         this._context = context;
